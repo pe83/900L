@@ -40,9 +40,7 @@ function EndTimer(){EndTime=Date.now();CalcTime(EndTime=Date.now()-StartTime);to
 
 function allset(){
  localStorage.HenLoaded="yes";sessionStorage.HenLoaded="yes";
- 
- msgs.innerHTML="<h1 style='font-size:35px;text-align:center;color:green;'>PS4 Exploited And GoldHEN Loaded.</h1>";
- setTimeout(allset2,1000);
+ setTimeout(allset2,1500);
 }
 
 function awaitpl() {
