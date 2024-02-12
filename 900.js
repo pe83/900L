@@ -55,9 +55,9 @@ function run_hax() {
   //alert("\n\nNow remove the USB drive then click OK to continue");
  }
  if (chain.syscall(23, 0).low == 0) {
-  if(localStorage.HenLoaded=="yes" && sessionStorage.HenLoaded!="yes"){setTimeout(runBinLoader,500);}
+  if(localStorage.HenLoaded=="yes" && sessionStorage.HenLoaded!="yes"){runBinLoader();}
   else if(localStorage.HenLoaded=="yes" && sessionStorage.HenLoaded=="yes"){allset();}
-  else if(localStorage.HenLoaded!="yes"){setTimeout(loadPayload,500);}
+  else if(localStorage.HenLoaded!="yes"){loadPayload();}
  }
 }
 
@@ -710,9 +710,9 @@ function kernelExploit() {
    chain.fcall(patch_buffer, p.read8(KERNEL_BASE_PTR));
    chain.fcall(window.syscalls[73], patch_buffer, 0x4000);
    chain.run();
-   if(localStorage.HenLoaded=="yes" && sessionStorage.HenLoaded!="yes"){setTimeout(runBinLoader,500);}
+   if(localStorage.HenLoaded=="yes" && sessionStorage.HenLoaded!="yes"){runBinLoader;}
    else if(localStorage.HenLoaded=="yes" && sessionStorage.HenLoaded=="yes"){allset();}
-   else if(localStorage.HenLoaded!="yes"){setTimeout(loadPayload,500);}
+   else if(localStorage.HenLoaded!="yes"){loadPayload();}
    return; 
   }
   alert("Kernel Exploit Failed! Reboot and Try Again.");
